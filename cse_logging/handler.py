@@ -1,7 +1,7 @@
 import uuid
 import logging
 from datetime import datetime, timezone
-from .models import Log, db
+from cse_logging.models import Log, db
 
 
 class PostgresHandler(logging.Handler):
