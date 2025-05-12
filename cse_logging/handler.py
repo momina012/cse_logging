@@ -17,11 +17,9 @@ class PostgresHandler(logging.Handler):
             user_id = getattr(record, 'user_id', None)
             log_type = getattr(record, 'log_type', 'application')
             context = getattr(record, 'context', {})
-            timestamp = getattr(record, 'timestamp', datetime.now(timezone.utc))
 
             log_entry = Log(
                 trace_id=trace_id,
-                timestamp=timestamp,
                 user_id=user_id,
                 service_name=self.service_name,
                 module_name=record.funcName,
