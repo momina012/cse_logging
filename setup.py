@@ -11,7 +11,8 @@ setup(
         'Flask',
         'SQLAlchemy',
         'alembic',
-        'psycopg2-binary'
+        'psycopg2-binary',
+        'Flask-SQLAlchemy'
     ],
     entry_points={
         'console_scripts': [

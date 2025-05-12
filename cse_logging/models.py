@@ -9,7 +9,7 @@ class Log(db.Model):
     __tablename__ = 'logs'
 
     trace_id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, nullable=False)
-    db.Column(db.DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)
+    timestamp = db.Column(db.DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)
     user_id = db.Column(UUID(as_uuid=True), nullable=True)
     service_name = db.Column(db.String(100), nullable=False)
     module_name = db.Column(db.String(200), nullable=False)

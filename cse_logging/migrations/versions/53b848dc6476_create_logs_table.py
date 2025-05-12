@@ -1,8 +1,8 @@
 """create logs table
 
-Revision ID: bf609d3d9043
+Revision ID: 53b848dc6476
 Revises: 
-Create Date: 2025-05-12 11:55:06.557291
+Create Date: 2025-05-12 16:31:32.816985
 
 """
 
@@ -11,7 +11,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'bf609d3d9043'
+revision = '53b848dc6476'
 down_revision = None
 branch_labels = None
 depends_on = None
