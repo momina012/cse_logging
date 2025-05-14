@@ -1,9 +1,11 @@
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
+from cse_logging.__init__ import db
 from sqlalchemy.dialects.postgresql import UUID, JSONB
 import uuid
 from datetime import datetime, timezone
+from sqlalchemy import Index
 
-db = SQLAlchemy()
+# db = SQLAlchemy()
 
 class Log(db.Model):
     __tablename__ = 'logs'
@@ -17,3 +19,7 @@ class Log(db.Model):
     log_type = db.Column(db.String(50), nullable=False)
     message = db.Column(db.Text, nullable=False)
     context = db.Column(JSONB, nullable=True)
+
+    __table_args__ = (
+            db.Index('idx_logs_service_level_type', 'service_name', 'level', 'log_type'),
+        )
